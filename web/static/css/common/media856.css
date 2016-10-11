@@ -1,0 +1,36 @@
+@media (max-width: 986px) {
+  body {
+    min-width: 765px;
+  }
+  .topbar {
+    padding-left: 0;
+    padding-right: 0 !important;
+    position: relative;
+  }
+  .leftside {
+    position: relative;
+    width: 100%;
+    border: 10px solid #128988;
+  }
+  .leftside .search {
+    position: relative;
+  }
+  .menu {
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding: 0;
+  }
+  .content {
+    width: 100%;
+    padding: 0 !important;
+  }
+  .content .searchbox {
+    padding: 80px 0 40px 0 !important;
+  }
+  .rightside {
+    position: relative;
+    width: 100%;
+    border: 10px solid #999;
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "state": "0",
+    "classcount": "3",
+    "class": [
+        {
+            "medicineclass_id": "3",
+            "medicineclass_classname": "解热镇痛药01",
+            "medicineclass_parentid": "1"
+        },
+        {
+            "medicineclass_id": "4",
+            "medicineclass_classname": "解热镇痛药02",
+            "medicineclass_parentid": "1"
+        },
+        {
+            "medicineclass_id": "5",
+            "medicineclass_classname": "解热镇痛药03",
+            "medicineclass_parentid": "1"
+        }
+    ],
+    "medicinecount": "2",
+    "medicine": [
+        {
+            "medicine_medicineclass_medicineid": "1",
+            "medicine_medicineclass_medicineclassid": "1",
+            "medicine_productname": "阿司匹林",
+            "medicine_approvedrugname": "阿司匹林"
+        },
+        {
+            "medicine_medicineclass_medicineid": "2",
+            "medicine_medicineclass_medicineclassid": "1",
+            "medicine_productname": "毓婷",
+            "medicine_approvedrugname": "毓婷"
+        }
+    ]
+}
