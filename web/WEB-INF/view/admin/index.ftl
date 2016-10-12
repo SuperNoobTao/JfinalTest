@@ -44,16 +44,14 @@
   <li class="havesub">
    <a>
     <span class="icon"><i class="flaticon-house3"></i></span>
-    <span class="title">用户管理</span>
+    <span class="title">员工管理管理</span>
          <span class="arrow">
           <i class="flaticon-previous2"></i>
           <i class="flaticon-expand38"></i>
         </span>
    </a>
    <ul class="submenu">
-    <li data-href="#"><a>查看所有员工</a></li>
-    <li data-href="#"><a>查看所有分组</a></li>
-    <li data-href="#"><a>查看所有关注的微信粉丝信息</a></li>
+    <li data-href="staff"><a>查看员工</a></li>
    </ul>
   </li>
 
@@ -61,32 +59,29 @@
   <li class="havesub">
    <a>
     <span class="icon"><i class="flaticon-tool14"></i></span>
-    <span class="title">活动管理</span>
+    <span class="title">项目管理</span>
          <span class="arrow">
           <i class="flaticon-previous2"></i>
           <i class="flaticon-expand38"></i>
         </span>
    </a>
    <ul class="submenu">
-    <li data-href="#"><a>查看所有活动</a></li>
+    <li data-href="project"><a>查看项目</a></li>
    </ul>
   </li>
 
   <li class="havesub">
    <a>
     <span class="icon"><i class="flaticon-tool14"></i></span>
-    <span class="title">内容管理</span>
+    <span class="title">工作管理</span>
          <span class="arrow">
           <i class="flaticon-previous2"></i>
           <i class="flaticon-expand38"></i>
         </span>
    </a>
    <ul class="submenu">
-    <li data-href="#"><a>文化园地</a></li>
-    <li data-href="#"><a>科技创新</a></li>
-    <li data-href="#"><a>员工动态</a></li>
-    <li data-href="#"><a>员工之声</a></li>
-    <li data-href="#"><a>年度健康体检</a></li>
+    <li data-href="#"><a>工作日报</a></li>
+
    </ul>
   </li>
 
@@ -231,59 +226,9 @@
 </div>
 
 <div class="ui-scroll"></div>
-<script src="../static/js/common/public.js"></script>
-<script>
- $("#changepasswordbtn").bind('click',function(){
-  var cont = $("#f2").clone();
-  artalert("修改密码",cont);
- })
-</script>
-<script src="../static/md5.js" ></script>
-<script>
- function changepass() {
-  if ($(".alertbox #n1").val()!=$(".alertbox #n2").val()) {
-   alert('两次密码输入不一致,请重新输入');
-   return;
-  }
-  else if ($(".alertbox #n1").val()==$(".alertbox #o1").val()) {
-   alert('新密码和旧密码不能一样,请重新输入');
-   return;
-  }
-  else{
+<script src="../../../static/js/common/public.js"></script>
 
-   $.ajax({
-    type: "post",
-    url: "changepassword.action",
-    dataType: "json",
-    timeout: 200000,
-    data: {
-     oldpass:hex_md5($(".alertbox #o1").val()),
-     newpass:hex_md5($(".alertbox #n1").val())
-    },
-    success: function (data) {
+<script src="../../../static/md5.js" ></script>
 
-     if (data.state == '00000') {
-      alert("操作成功");
-      location.reload(false);
-     }
-     else if (data.state == '20001') {
-      alert("登入过期,请重新登入");
-      location.href = "index.action";
-     }
-     else if(data.state=='10000'){
-      alert("系统故障");
-     }
-     else {
-      alert(data.message);
-     }
-
-    },
-    error: function (XMLHttpRequest, textStatus, errorThrown) {
-     alert("网络异常");
-    }
-   });
-  }
- }
-</script>
 </body>
 </html>

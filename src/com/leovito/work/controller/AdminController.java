@@ -10,7 +10,7 @@ import com.jfinal.core.Controller;
 import com.leovito.work.model.User;
 import com.leovito.work.service.UserService;
 
-public class HelloController extends Controller {
+public class AdminController extends Controller {
 
     UserService userService = new UserService();
 
