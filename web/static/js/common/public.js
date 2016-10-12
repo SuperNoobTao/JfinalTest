@@ -15,7 +15,7 @@ $(function(){
 			}
 		}
 	// 从本地读取pagehref变量，若没有则加载welcome/welcome
-	var pagehref = sessionStorage.getItem("pagehref")?sessionStorage.getItem("pagehref"):"staff";
+	var pagehref = sessionStorage.getItem("pagehref")?sessionStorage.getItem("pagehref"):"/staff";
 	setmenuliclass(pagehref);
 	$("#content iframe").attr("src",pagehref);
 	pagehref = null;

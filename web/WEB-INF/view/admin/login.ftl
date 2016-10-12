@@ -12,7 +12,7 @@
 </head>
 
 <body>
-<form action="../hello" method="post">
+<form action="admin/login" method="post">
     <table>
         <tr>
             <td>name:</td>

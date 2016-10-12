@@ -51,7 +51,7 @@
         </span>
    </a>
    <ul class="submenu">
-    <li data-href="staff"><a>查看员工</a></li>
+    <li data-href="/staff"><a>查看员工</a></li>
    </ul>
   </li>
 
@@ -66,7 +66,7 @@
         </span>
    </a>
    <ul class="submenu">
-    <li data-href="project"><a>查看项目</a></li>
+    <li data-href="/project"><a>查看项目</a></li>
    </ul>
   </li>
 

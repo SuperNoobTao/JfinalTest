@@ -55,7 +55,7 @@ public class BaseConfig extends JFinalConfig {
     @Override
     public void configRoute(Routes me) {
         // TODO Auto-generated method stub
-        me.add("/hello", AdminController.class,"admin");
+        me.add("/admin", AdminController.class,"admin");
         me.add("/", IndexController.class,"admin");	// 第三个参数为该Controller的视图存放路径
         me.add("/staff", StaffController.class,"admin");
         me.add("/project", ProjectController.class,"admin");
