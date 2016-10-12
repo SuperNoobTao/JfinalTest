@@ -24,9 +24,9 @@ public class HelloController extends Controller {
         user = userService.findUser(account, pwd);
 
         if (user != null) {
-            render("/html/hello.html");
+            render("index.ftl");
         } else {
-            render("/html/login.html");
+            render("login.ftl");
         }
 
     }
