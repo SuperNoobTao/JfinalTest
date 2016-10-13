@@ -1,0 +1,463 @@
+@import url('reset.css');
+body {
+  padding: 5px 10px;
+}
+.contline,
+.ui-checkbox {
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+.presee {
+  width: 100px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table input {
+  width: 200px;
+}
+table.tableA {
+  border-bottom: 1px solid #666;
+  border-top: 1px solid #666;
+}
+table.tableA th {
+  height: 35px;
+  line-height: 35px;
+  font-size: 13px;
+  background-color: #f9ecec;
+}
+table.tableA td {
+  text-align: center;
+  padding: 7px 5px;
+  font-size: 13px;
+}
+table.tableA tr:nth-child(2n-1) {
+  background-color: #f4f5f6;
+}
+table.tableA tr:last-child {
+  border-bottom: 0;
+}
+table.tableB th {
+  height: 30px;
+  vertical-align: top;
+  text-align: right;
+  width: 120px;
+  padding-left: 5px;
+  padding-right: 10px;
+  padding-top: 5px;
+}
+table.tableB td {
+  padding: 5px;
+}
+table.tableB td input[type="text"] {
+  width: 80%;
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-size: 12px;
+}
+table.tableB td textarea {
+  width: 80%;
+  height: 70px;
+  padding: 5px;
+  resize: none;
+  border: 1px solid #ddd;
+  font-size: 12px;
+  color: #555;
+}
+.ui-blue {
+  background-color: #31b0d5;
+}
+.ui-blue:hover {
+  background-color: #5bc0de;
+}
+.ui-deepblue {
+  background-color: #337ab7;
+}
+.ui-deepblue:hover {
+  background-color: #4f93ce;
+}
+.ui-green {
+  background-color: #449d44;
+}
+.ui-green:hover {
+  background-color: #5cb85c;
+}
+.ui-orange {
+  background-color: #ec971f;
+}
+.ui-orange:hover {
+  background-color: #f0ad4e;
+}
+.ui-red {
+  background-color: #dd4340;
+}
+.ui-red:hover {
+  background-color: #e56e6b;
+}
+.ui-grey {
+  background-color: #aaaaaa;
+}
+.ui-grey:hover {
+  background-color: #c3c3c3;
+}
+.ui-white {
+  background-color: #fff;
+  border: 1px solid #999;
+}
+.ui-white:hover {
+  background-color: #f4f4f4;
+}
+.btn {
+  display: inline-block;
+  max-width: 100px;
+  font-size: 13px;
+  text-align: center;
+  padding: 2px 10px;
+  margin-right: 5px;
+  border-radius: 3px;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.btn:last-child {
+  margin-right: 0;
+}
+.btn.file {
+  color: #555;
+  position: relative;
+  overflow: visible;
+}
+.btn.file > input[type="file"] {
+  display: none;
+}
+.btn.file:before {
+  content: attr(data-path);
+  position: absolute;
+  left: 100%;
+  top: 2px;
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 5px;
+}
+.ui-pagenav {
+  height: 45px;
+  width: 100%;
+  line-height: 35px;
+  text-align: right;
+  padding: 5px 0;
+}
+.ui-pagenav > div {
+  display: inline-block;
+  color: #337ab7;
+  cursor: pointer;
+}
+.ui-pagenav > div:hover {
+  color: #77acd9;
+}
+.ui-pagenav > input {
+  width: 50px;
+  height: 25px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid #ddd;
+}
+.ui-pagenav .left,
+.ui-pagenav .right {
+  height: 100%;
+  min-width: 20px;
+  text-align: center;
+}
+.ui-pagenav .left > i,
+.ui-pagenav .right > i {
+  font-size: 12px;
+}
+.line {
+  position: relative;
+  width: 100%;
+  min-height: 30px;
+  overflow: hidden;
+  margin: 10px 0;
+}
+.line h1 {
+  font-size: 20px;
+}
+.line .lineinput {
+  width: 60%;
+  height: 30px;
+  border: 1px solid #ddd;
+  padding: 0 10px;
+}
+.line .linetextarea {
+  display: block;
+  width: 60%;
+  height: 200px;
+  resize: none;
+  border: 1px solid #ddd;
+  font-size: 14px;
+  padding: 10px;
+}
+.line .btn {
+  min-width: 60px;
+}
+.subline {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  line-height: 20px;
+  margin: 5px 0;
+}
+.subline > * {
+  display: block;
+  float: left;
+}
+.ui-searchbox {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  right: 0;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #666;
+  width: 180px;
+  padding-right: 30px;
+  padding-left: 15px;
+  overflow: hidden;
+}
+.ui-searchbox > input {
+  width: 100%;
+  border: 0;
+  position: relative;
+  bottom: 2px;
+  font-size: 12px;
+}
+.ui-searchbox > i {
+  width: 28px;
+  line-height: 28px;
+  height: 28px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+  color: #333;
+}
+.ui-searchbox > i:hover {
+  color: #999;
+}
+.ui-checkbox {
+  white-space: nowrap;
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+  padding-left: 20px;
+  width: auto;
+  text-align: left;
+  cursor: pointer;
+}
+.ui-checkbox > * {
+  display: block;
+  float: left;
+}
+.ui-checkbox > div {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  border: 1.5px solid #666;
+}
+.ui-checkbox > div > i {
+  position: relative;
+  bottom: 4px;
+  display: none;
+}
+.ui-checkbox > span {
+  height: 20px;
+  margin-right: 5px;
+}
+.ui-checkbox input {
+  width: 100px;
+  height: 20px;
+  position: relative;
+  top: 2px;
+  border: 1px solid #999;
+}
+.ui-checkbox.checked > div > i {
+  display: inline;
+}
+.ui-ellipsisx100,
+.ui-ellipsisx200 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ui-ellipsisx100 {
+  width: 100px;
+}
+.ui-ellipsisx200 {
+  width: 200px;
+}
+.name {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 16px;
+}
+.verticalCenter {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+.horizontalCenter {
+  display: block;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+.veryCenter {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.contline {
+  position: relative;
+  cursor: pointer;
+  height: auto;
+  width: auto;
+  padding: 0;
+  line-height: 30px;
+  color: #555;
+  font-weight: normal;
+}
+.contline a {
+  width: 20px;
+  text-align: center;
+  height: 30px;
+  display: block;
+  text-align: left;
+  position: absolute;
+}
+.contline a + span {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.contline > .td1 .flaticon-maths62 {
+  display: inline-block;
+}
+.contline > .td1 .flaticon-minussign6 {
+  display: none;
+}
+.contline > span {
+  width: 100%;
+  display: block;
+  white-space: nowrap;
+}
+.contline > .contline {
+  display: none;
+  padding-left: 20px;
+}
+.contline > .contline:after {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 10px;
+  width: 10px;
+  height: 1px;
+  border-top: 1px dashed #aaa;
+}
+.contline.set {
+  font-weight: bold;
+  color: #dd4340;
+}
+.contline.open {
+  height: auto !important;
+}
+.contline.open > .td1 .flaticon-maths62 {
+  display: none;
+}
+.contline.open > .td1 .flaticon-minussign6 {
+  display: inline-block;
+}
+.contline.open > .contline {
+  display: block;
+}
+.contline.open > .contline:before {
+  content: '';
+  position: absolute;
+  top: -9px;
+  left: 6px;
+  height: 100%;
+  width: 1px;
+  border-left: 1px dashed #aaa;
+}
+.ui-tree {
+  padding: 0 10px;
+  width: 28%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(49, 176, 213, 0.1);
+  overflow: scroll;
+}
+.ui-detail {
+  padding: 10px;
+  width: 100%;
+  padding-left: 29%;
+  min-height: 400px;
+  overflow: hidden;
+}
+.ui-detail > div {
+  width: 100%;
+}
+.rownav {
+  width: 100%;
+  list-style: none;
+  border-bottom: 1px solid #ddd;
+}
+.rownav li {
+  display: inline-block;
+  margin-bottom: -1px;
+}
+.rownav li a {
+  display: block;
+  padding: 8px;
+  line-height: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+}
+.rownav li.active a {
+  border: 1px solid #ddd;
+  border-bottom-color: #fff;
+}

@@ -1,0 +1,379 @@
+/*
+*
+ *  ---------------------------------------
+ *  ---------- TABLE OF CONTENTS ----------
+ *  ---------------------------------------
+*
+*
+*	1. File Imports
+*	2. Reset Styles
+*	3. Override Styles
+*	4. Log In Styles
+*	5. Welcome Styles
+*
+*/
+
+
+
+
+
+/********** 1. File Imports **********/
+/*************************************/
+/*@import url('../flaticon/flaticon.css');*/
+
+/********** 2. Reset Styles **********/
+/*************************************/
+
+/* æ¸…é™¤å†…å¤–è¾¹è· */
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements ç»“æž„å…ƒç´  */
+dl, dt, dd, ul, ol, li, /* list elements åˆ—è¡¨å…ƒç´  */
+pre, /* text formatting elements æ–‡æœ¬æ ¼å¼å…ƒç´  */
+fieldset, lengend, button, input, textarea, /* form elements è¡¨å•å…ƒç´  */
+th, td { /* table elements è¡¨æ ¼å…ƒç´  */
+    margin: 0;
+    padding: 0;
+}
+
+/* è®¾ç½®é»˜è®¤å­—ä½“ */
+
+body {
+	background-color: #fff;
+	background-position: 100% auto;
+	color: #000;
+	font-size: 62.5%;
+	height: 100%;
+	min-height:600px;
+}
+
+
+/* é‡ç½®åˆ—è¡¨å…ƒç´  */
+ul, ol { list-style: none; }
+
+
+a:focus, a:active { outline: none; }
+
+a {
+	text-decoration: none;
+	color: #e60012;
+}
+
+html {
+	height: 100%;
+}
+/********** 3. Override Styles *********/
+/*************************************/
+input[type=text], input[type=password] {
+	width: 100%;
+	height: 40px;
+	border: none;
+	line-height: 40px;
+	text-indent: 1em;
+	font-family: segoe;
+}
+
+.clear {
+	clear: both;
+}
+/********** 4. Log In Styles *********/
+/*************************************/
+.logo-wrapper {
+	float: left;
+	height: 70%;
+	width: 70%;
+	background-color: #e60012;
+	min-height: 400px;
+}
+.brand-top {
+	/*background: url(../../img/login-logo.png) no-repeat 0 0;*/
+	background: url() no-repeat 0 0;
+	background-size: contain;
+	background-position: center;
+	height: 48%;
+	width: 50%;
+	margin: 0 auto;
+	margin-top: 5%;
+}
+.brand-middle {
+	/*background: url(../../img/welcome.fw.png) no-repeat 0 0;*/
+	background: url() no-repeat 0 0;
+	background-size: contain;
+	background-position: center;
+	height: 30%;
+	width: 45%;
+	margin: 0 auto;
+}
+.login-wrapper {
+	float: right;
+	height: 100%;
+	width: 30%;
+	z-index: 10;
+	position: relative;
+	min-height: 550px;
+}
+.brand-wrapper {
+	float: left;
+	height: 30%;
+	width: 70%;
+	background-color: #e60012;
+	min-height: 150px;
+}
+.brand-bottom {
+	/*background: url(../../img/brands.fw.png) no-repeat 0 0;*/
+	background: url() no-repeat 0 0;
+	background-size: contain;
+	background-position: center;
+	margin: 0 auto;
+	width: 80%;
+	height: 90%;
+}
+.login-panel {
+	width: 70%;
+	margin: 0 auto;
+	height:100%;
+}
+.login-title {
+	color: #e60012;
+	font-size: 17px;
+	border-left: 1px solid #e60012;
+	padding-left: 1.15em;
+	/*margin: 10% 0 10%;*/
+	height: 30%;
+	font-weight: normal;
+	font-family: segeo;
+	position: absolute;
+	height: 70px;
+	top: 50px;
+}
+
+.login-submit {
+  /* margin-bottom: 15%; */
+  position: absolute;
+  width: 70%;
+  top: 47%;
+  height: 290px;
+  margin-top: -145px;
+}
+
+.login-submit .dropdown-wrapper {
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #eee;
+	color: #000;
+	margin-bottom: 1.25em;
+	-moz-user-select:none; /*ç«ç‹*/
+	-webkit-user-select:none; /*webkitæµè§ˆå™¨*/
+	-ms-user-select:none; /*IE10*/
+	-khtml-user-select:none; /*æ—©æœŸæµè§ˆå™¨*/
+	user-select:none;
+}
+.dropdown-triger {
+	display: block;
+}
+.dropdown-triger:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+.login-submit .dropdown-content {
+	width: 85%;
+	float: left;
+	text-indent: 1em;
+	color: #000;
+	font-size: 12px;
+}
+
+.login-submit .dropdown-list {
+	width: 100%;
+	padding: .3em 0;	
+	z-index: 20;
+	position: relative;
+	top: 0;
+	left: 0;
+	background-color: #eee;
+	display: none;
+}
+
+.login-submit .dropdown-list li {
+	display: block;
+	width: 100%;
+	text-indent: 1em;
+	font-size: 12px;
+}
+
+.login-submit .dropdown-list li:hover {
+	background-color: #e60012;
+	color: #fff;
+	cursor: pointer;
+}
+
+.login-submit .addon {
+	/*width: 20%;*/
+	position: relative;
+	right: 10px;
+	float: right;
+	color: #666;
+	font-size:20px;
+}
+
+.login-submit input, .login-submit .btn-red {
+	margin-bottom: 1.25em;
+	background-color: #eee;
+}
+
+.login-submit label {
+	font-size: 1.6em;
+	color: #e60012;
+	margin-bottom: 0.6875em;
+	display: block;
+}
+
+.login-submit .btn-red {
+	width: 100%;
+	background-color: #e60012;
+	border: transparent;
+	color: #fff;
+	height: 40px;
+	line-height: 40px;	
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font-size: 12px;
+
+}
+
+.login-submit .btn-red:hover {
+	background-color: #ff9999;
+}
+
+.login-help a {
+	font-size: 12px;
+	display: block;
+	text-decoration: underline;
+}
+.login-help a span:first-child {
+	display: block;
+}
+.login-copyright {
+	border-top: 1px solid #e60012;
+	padding: 0 1px;
+	padding-top: 1em;
+	position: absolute;
+	bottom: 10px;
+	width: 70%;
+}
+
+.login-copyright p {
+	color: #999;
+	font-size: 12px;
+}
+
+.login-copyright .items {
+	margin-top: 1em;
+}
+
+.login-copyright .items li {
+	border-left: 2px solid #e60012;
+	margin-bottom: 1em;
+	padding-left: 4px;
+}
+
+.login-copyright .items a {
+	font-size: 12px;
+}
+
+@media screen and (max-width: 856px) {
+	.logo-wrapper, .login-wrapper, .brand-wrapper {
+		width: 100%;
+	}
+	.logo-wrapper {
+		height: 38%;
+		min-height: 300px;
+	}
+	.brand-top {
+		margin-top: 5%;
+		height: 55%;
+	}
+	.brand-middle {
+		width: 48%;
+	}
+	.login-wrapper {
+		height: 44%;
+		min-height: 420px;
+	}
+	.brand-wrapper {
+		height: 18%;		
+		padding: 2% 0;
+		min-height: 100px;
+	}
+	.brand-bottom {
+		height: 90%;
+		margin: 0 auto;
+	}
+	.login-panel {
+		width: 53%;
+		min-height: 0;
+	}
+	.login-title {
+		padding-left: 10px;
+		overflow: hidden;
+		height: 28px;
+		top: 20px;
+	}
+	.login-title p {
+		float: left;
+		margin-right: 5px;
+	}
+	.login-submit {
+		width: 53%;
+		height: 240px;
+		margin-top: -120px;
+	}
+
+	.login-submit .dropdown-wrapper, .login-submit .btn-red {
+		margin-bottom: 3%;
+		/*height: 34px;
+		line-height: 34px;*/
+	}
+	.login-submit input {
+		/*height: 34px;
+		line-height: 34px;*/
+	}
+	.login-submit .addon {
+		font-size: 14px;
+		right: 12px;
+	}
+	.login-submit .sign-in {
+		/*visibility: hidden;*/
+		display: none;
+	}
+	.login-submit .dropdown-content {
+		width: 85%;
+	}
+	.login-submit input {
+		margin-bottom: 3%;
+	}
+	.login-help, .login-copyright {
+		overflow: hidden;
+	}
+	.login-help a:hover {
+		text-decoration: underline;
+		color: #f8b8b4;
+	}
+	.login-help a span:first-child {
+		display: inline;
+	}
+	.login-copyright {
+		width: 53%;
+	}
+	.login-copyright p {
+		float: left;
+		font-size: 12px;
+	}
+	.login-copyright .items {
+		margin-top: 3%;
+	}
+	.login-copyright .items li {
+		float: left;
+		margin-right: 5px;
+	}
+}

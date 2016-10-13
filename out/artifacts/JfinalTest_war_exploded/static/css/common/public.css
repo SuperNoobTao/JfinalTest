@@ -1,0 +1,795 @@
+body {
+  min-width: 986px;
+  position: relative;
+}
+body.notscroll {
+  overflow: hidden;
+}
+.topbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  left: 0;
+  background-color: #dd4340;
+  padding-left: 256px;
+  z-index: 9;
+}
+.topbar img.logo {
+  height: 25px;
+  display: block;
+  margin-left: 16px;
+  margin-top: 9px;
+  float: left;
+}
+.topbar .left {
+  float: left;
+  width: 44px;
+  background: #128988;
+  height: 100%;
+  position: relative;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+.topbar .right {
+  float: right;
+  position: relative;
+}
+.topbar .right .navblock {
+  height: 44px;
+  float: left;
+  line-height: 44px;
+  text-align: center;
+  color: #fff;
+  padding: 0 14px;
+  position: relative;
+  font-size: 12px;
+}
+.topbar .right .navblock i {
+  font-size: 16px;
+}
+.topbar .right .navblock .noticenum,
+.topbar .right .navblock .noticenumbox {
+  position: absolute;
+  top: -8px;
+  right: 8px;
+}
+.topbar .right .navblock .noticenumbox {
+  font-size: 15px;
+  color: #fcb30a;
+}
+.topbar .right .navblock .noticenum {
+  font-size: 12px;
+  transform: scale(0.8, 0.8);
+  -webkit-transform: scale(0.8, 0.8);
+  right: 9px;
+  top: -10px;
+}
+.topbar .right .portrait {
+  float: left;
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  margin-top: 6px;
+  border-radius: 16px;
+  border: 1.5px solid #fff;
+  overflow: hidden;
+}
+.topbar .right .portrait img {
+  width: 100%;
+  height: 100%;
+}
+.leftside {
+  width: 256px;
+  background-color: #262626;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding-top: 0;
+  z-index: 10;
+}
+.leftside .search {
+  width: 100%;
+  height: 44px;
+  z-index: 2;
+  position: absolute;
+  background-color: #262626;
+}
+.leftside .search p.logo {
+  height: 44px;
+  line-height: 44px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  float: left;
+  color: #fff;
+  padding-left: 10px;
+}
+.menu {
+  padding-top: 43px;
+  left: 0;
+  top: 0;
+  position: absolute;
+  width: 256px;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: #262626;
+  z-index: 1;
+}
+.menu > li {
+  height: auto;
+  overflow: hidden;
+  line-height: 44px;
+  color: #fff;
+  font-size: 15px;
+  margin-top: 1px;
+}
+.menu > li > a {
+  display: block;
+  width: 100%;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.menu > li > a span {
+  display: inline-block;
+}
+.menu > li > a .icon {
+  width: 44px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.menu > li > a .title {
+  padding-left: 10px;
+  font-size: 14px;
+}
+.menu > li > a .arrow {
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+}
+.menu > li > a .arrow i {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+}
+.menu > li > a .flaticon-expand38 {
+  display: none;
+}
+.menu > li > .submenu {
+  display: none;
+  padding: 10px 0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu > li > .submenu li {
+  height: 35px;
+  width: 100%;
+  margin-bottom: 1px;
+  line-height: 34px;
+}
+.menu > li > .submenu li a {
+  width: 100%;
+  height: 35px;
+  display: block;
+  padding: 0 0 0 60px;
+  font-size: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.menu > li > .submenu li.set a {
+  background-color: #dd4340;
+  color: #fff;
+  font-weight: normal;
+}
+.menu > li.lipage {
+  background-color: #dd4340;
+  font-weight: normal;
+}
+.menu > li.lipage a {
+  background: none;
+}
+.menu > li.open {
+  height: auto;
+}
+.menu > li.open a .flaticon-expand38 {
+  display: inline-block;
+}
+.menu > li.open a .flaticon-previous2 {
+  display: none;
+}
+.menu > li.open > .submenu {
+  display: block;
+}
+.innerbox > h1 {
+  font-size: 17px;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0;
+  line-height: 40px;
+  position: relative;
+  font-weight: 300;
+}
+.innerbox > h1 > i {
+  font-size: 15px;
+}
+.innerbox > h1 .editbtn {
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background-color: #aaa;
+  text-align: center;
+  font-size: 15px;
+}
+.content {
+  width: 100%;
+  min-height: 650px;
+  height: 100%;
+  padding-left: 256px;
+  padding-top: 44px;
+}
+.content .innerbox {
+  padding: 10px 20px;
+}
+.content .innerbox .navbar {
+  height: 30px;
+  width: 100%;
+  background-color: #d4d4d4;
+  color: #999;
+  font-size: 12px;
+  line-height: 30px;
+}
+.content .innerbox .navbar span {
+  padding: 0 5px;
+}
+.content .innerbox .navbar .highlight {
+  padding: 0;
+  color: #128988;
+}
+.content .innerbox .navbar i {
+  margin: 0px 5px;
+}
+.content .innerbox .navbar a {
+  display: inline-block;
+}
+.rightside {
+  display: none;
+  width: 256px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 10;
+  background-color: #262626;
+}
+.rightside .date {
+  height: 44px;
+  width: 100%;
+  color: #fff;
+  font-style: italic;
+  font-size: 12px;
+  font-weight: normal;
+  line-height: 44px;
+  padding-left: 10px;
+  z-index: 2;
+  position: relative;
+}
+.rightside .menu {
+  right: 0;
+  left: auto;
+}
+.rightside .menu > li {
+  line-height: 24px;
+}
+.rightside .menu > li > a {
+  padding: 10px 0;
+  height: 45px;
+  display: block;
+  background: none;
+}
+.rightside .menu > li > a span {
+  height: 100%;
+}
+.rightside .menu > li > a .icon {
+  background: none;
+  border-right: 1px solid #fff;
+}
+.rightside .menu > li > a .arrow {
+  height: 25px;
+  top: 10px;
+}
+.rightside .menu > li #signout {
+  background-color: #dd4340;
+}
+.rightside .menu > li #signout:hover {
+  background-color: #f99 !important;
+}
+.rightside .menu > li > .submenu {
+  background-color: #555;
+}
+.rightside .menu > li > .submenu li a {
+  padding-left: 10px;
+  background: none;
+}
+.rightside .menu > li > .submenu li a i {
+  display: none;
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+}
+.rightside .menu > li > .submenu li:hover a {
+  background-color: #f99 !important;
+}
+.rightside .menu > li > .submenu li.set a {
+  background-color: #dd4340;
+}
+.rightside .menu > li > .submenu li.set a i {
+  display: inline-block;
+}
+.searchblock {
+  width: 100%;
+  height: 45px;
+  background-color: #fff;
+  margin: 0 auto;
+  line-height: 45px;
+  color: #666;
+  position: relative;
+  z-index: 2;
+}
+.searchblock input {
+  width: 100%;
+  height: 100%;
+  display: block;
+  float: left;
+  border: 0;
+  padding: 0 45px 0 140px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.searchblock #fsjicon {
+  position: absolute;
+  right: 13px;
+  top: 0;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.2);
+}
+.selector {
+  width: 120px;
+  height: 100%;
+  padding-left: 10px;
+  position: relative;
+  cursor: pointer;
+  z-index: 1;
+}
+.selector > i {
+  position: absolute;
+  right: 13px;
+  top: 0px;
+}
+.selector ul {
+  position: absolute;
+  list-style: none;
+  width: 150px;
+  overflow: hidden;
+  background-color: #fff;
+  top: 47px;
+  left: 0;
+  display: none;
+  box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+.selector ul li {
+  height: 45px;
+  line-height: 45px;
+  padding-left: 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.selector ul li:hover {
+  background-color: #eaa;
+}
+.selector.open {
+  z-index: 2;
+}
+.selector.open ul {
+  display: block;
+}
+.selector.disabled {
+  cursor: auto;
+}
+.selector.disabled ul {
+  display: none;
+}
+.selector.upshow ul {
+  top: auto !important;
+  bottom: 29px !important;
+  border-top: 1px solid #ddd !important;
+  border-bottom: 0 !important;
+}
+.menuclose .topbar {
+  padding-left: 0;
+}
+.menuclose .leftside {
+  display: none;
+}
+.menuclose .leftside .menu {
+  display: none;
+}
+.menuclose .content {
+  padding-left: 0;
+}
+.menuclose .foot {
+  padding-left: 0;
+}
+.usermenutoggler {
+  cursor: pointer;
+}
+.usermenuopen .topbar {
+  padding-right: 256px;
+}
+.usermenuopen .content {
+  padding-right: 256px;
+}
+.usermenuopen .rightside {
+  display: block;
+}
+.scrollbox {
+  width: 100%;
+  position: relative;
+  overflow-y: scroll;
+}
+.scrollbox table tr:hover td {
+  background-color: #f9ecec !important;
+}
+.masklayer {
+  position: fixed;
+  display: none;
+  z-index: 11;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.masklayer .loadingbox {
+  display: none;
+  width: 100%;
+  height: 200px;
+  position: absolute;
+  top: 50%;
+}
+.masklayer .loadingbox img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  margin: -100px auto;
+}
+.masklayer .alertbox {
+  width: 600px;
+  margin: 60px auto;
+  background-color: #fff;
+  position: relative;
+}
+.masklayer .alertbox .title {
+  height: 60px;
+  line-height: 60px;
+  width: 100%;
+  font-size: 18px;
+  padding: 0 20px;
+  position: relative;
+  font-weight: normal;
+}
+.masklayer .alertbox .title i {
+  text-align: center;
+  position: absolute;
+  right: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.masklayer .alertbox .cont {
+  max-height: 300px;
+  width: 580px;
+  margin: 0 auto 20px;
+  padding: 0;
+}
+.masklayer .alertbox .cont > * {
+  height: auto;
+  max-height: 300px;
+}
+.masklayer .alertbox .btngroup {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+.masklayer .alertbox .btngroup .btn {
+  height: 100%;
+  width: 50%;
+  display: block;
+  float: left;
+  text-align: center;
+  line-height: 40px;
+  background-color: #e8e8e8;
+  font-size: 12px;
+  font-weight: normal;
+}
+.masklayer .alertbox .btngroup .okbtn {
+  display: none;
+  width: 100%;
+  background-color: #dd4340;
+  color: #fff;
+}
+.masklayer.showokbtn .alertbox .btngroup .btn {
+  display: none;
+}
+.masklayer.showokbtn .alertbox .btngroup .okbtn {
+  display: block;
+}
+.masklayer.show {
+  display: block;
+}
+.masklayercont {
+  display: none;
+}
+.masklayer.loadingshow {
+  display: block;
+}
+.masklayer.loadingshow .alertbox {
+  display: none;
+}
+.masklayer.loadingshow .loadingbox {
+  display: block;
+}
+.formtable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.formtable tr td {
+  padding: 10px;
+  border: 1px solid #fff;
+  background-color: #f9fafb;
+}
+.formtable tr td:nth-child(1) {
+  background-color: #edeff0;
+  text-align: right;
+}
+.formtable tr td input,
+.formtable tr td textarea {
+  border: 1px solid #d4d4d4;
+  font-size: 12px;
+  color: #555;
+  font-weight: 300;
+  font-family: segoe;
+}
+.formtable tr td input {
+  height: 35px;
+  width: 100%;
+  line-height: 35px;
+  padding-left: 10px;
+}
+.formtable tr td textarea {
+  padding: 10px;
+  width: 100%;
+  resize: none;
+  height: 90px;
+}
+.alertchooselayer {
+  overflow: hidden;
+  position: relative;
+}
+.alertchooselayer .searchbox {
+  height: 30px;
+}
+.alertchooselayer .searchbox input {
+  width: 100%;
+  display: block;
+  height: 100%;
+  border: 1px solid #d4d4d4;
+  font-size: 12px;
+  padding-left: 10px;
+}
+.alertchooselayer .thead {
+  width: 100%;
+  background-color: #eee;
+  height: 35px;
+}
+.alertchooselayer .thead th {
+  font-weight: normal;
+}
+.alertchooselayer .scrollbox {
+  width: 100%;
+  max-height: 240px;
+  height: auto;
+}
+.alertchooselayer .scrollbox table {
+  width: 100%;
+  cursor: pointer;
+  border-collapse: collapse;
+}
+.alertchooselayer .scrollbox table tr {
+  height: 30px;
+}
+.alertchooselayer .scrollbox table tr td {
+  text-align: center;
+}
+.alertchooselayer .scrollbox table tr:nth-child(2n) {
+  background-color: #f4f5f6;
+}
+.alertchooselayer .scrollbox table tr:hover {
+  background-color: #eaa;
+}
+.alertchooselayer .scrollbox table tr.set {
+  background-color: #dd4340;
+  color: #fff;
+}
+.alertchooselayer .scrollbox table tr.set:hover td {
+  background-color: #dd4340 !important;
+}
+.alertchooselayer .pagebar {
+  width: 100%;
+  height: 40px;
+  line-height: 30px;
+  position: relative;
+}
+.alertchooselayer .pagebar input {
+  width: 30px;
+  height: 22px;
+  border: 1px solid #999;
+  text-align: center;
+  line-height: 20px;
+  margin: 0 5px;
+}
+.alertchooselayer .pagebar .pagenav {
+  position: absolute;
+  display: inline-block;
+  right: 0;
+  top: 0;
+}
+.alertchooselayer .pagebar .pagenav i {
+  font-size: 12px;
+}
+.flaticon-leftarrow1 {
+  cursor: pointer;
+}
+.ui-checkbox {
+  font-size: 14px;
+  background-color: #fff;
+  padding: 0 1px;
+  color: #fff;
+  cursor: pointer;
+  -webkit-user-select: none;
+  /* Chrome all / Safari all */
+  -moz-user-select: none;
+  /* Firefox all */
+  -ms-user-select: none;
+  /* IE 10+ */
+  user-select: none;
+}
+.ui-checkbox.border {
+  border: 1px solid #ddd;
+}
+.ui-checkbox.checked {
+  color: #555 !important;
+}
+.ui-checkbox.state2:not(.checked):not(.border) {
+  border: 3px solid #eee;
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  position: relative;
+  top: 3px;
+}
+.ui-checkbox.state2:not(.checked):not(.border):before {
+  content: '';
+}
+.ui-checkbox.grey {
+  background-color: #eee;
+  color: #eee;
+}
+.ui-checkbox.grey.state2:not(.checked) {
+  background: #ccc;
+}
+.editstate .ui-checkbox.grey {
+  background-color: #fff;
+  color: #fff;
+}
+.editstate .ui-checkbox.grey.state2:not(.checked) {
+  border: 3px solid #fff;
+  background-color: #ccc;
+}
+.ui-scroll {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  height: 40px;
+  width: 40px;
+  background-color: #b3b3b3;
+  cursor: pointer;
+  display: none;
+}
+.ui-scroll::before {
+  content: "";
+  display: block;
+  border-bottom: 9px solid #fff;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  position: absolute;
+  top: 7px;
+  left: 12px;
+}
+.ui-scroll::after {
+  content: "Top";
+  position: absolute;
+  color: #fff;
+  top: 18px;
+  left: 10px;
+}
+.ui-message {
+  display: table;
+}
+.ui-message .tipicon {
+  width: 52px;
+  height: 32px;
+  font-size: 32px;
+  margin: 0;
+  text-align: center;
+}
+.ui-message .tipword {
+  margin: 0;
+}
+.ui-message .infocolor {
+  color: #64d5ff;
+}
+.ui-message .successcolor {
+  color: #4aa708;
+}
+.ui-message .surecolor {
+  color: #0b56d0;
+}
+.ui-message .errorcolor {
+  color: #dd4340;
+}
+.noresault {
+  width: 100%;
+  background-color: #e8eaeb;
+  position: relative;
+}
+.noresault > div {
+  height: 60px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  text-align: center;
+}
+.noresault > div i {
+  font-size: 30px;
+  height: 30px;
+  color: #64d4fd;
+}
+.noresault > div p {
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+}
+.rownav {
+  width: 100%;
+  list-style: none;
+}
+.rownav li {
+  display: inline-block;
+}
+.rownav li a {
+  display: block;
+  padding: 8px;
+  line-height: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px 4px 0 0;
+}

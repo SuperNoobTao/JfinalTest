@@ -1,6 +1,8 @@
 package com.leovito.work.service;
 
+import com.jfinal.plugin.activerecord.Db;
 import com.leovito.work.model.User;
+import com.leovito.work.model.Work;
 import com.sun.scenario.effect.Effect;
 
 /**
@@ -34,7 +36,13 @@ public class UserService {
     }
 
 
-    public Boolean removeUser(){
+    public Boolean isrecord(int staffid,java.sql.Date today){
+        String sql = "select * from tb_work where work_staffid='" + staffid + "'and work_date ='" + today + "'";
+        Work work = Work.dao.findFirst(sql);
+
+        if(work!=null){
+            return true;
+        }
         return  false;
 
     }

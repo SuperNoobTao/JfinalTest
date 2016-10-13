@@ -14,7 +14,7 @@ public class AdminController extends Controller {
 
     UserService userService = new UserService();
 
-    public void login()
+    public void index()
     {
         String account = getPara("account");
         String pwd = getPara("pwd");

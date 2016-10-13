@@ -60,5 +60,6 @@ public class BaseConfig extends JFinalConfig {
         me.add("/staff", StaffController.class,"admin");
         me.add("/project", ProjectController.class,"admin");
         me.add("/user", UserController.class,"user");
+        me.add("/work", WorkController.class,"admin");
     }
 }

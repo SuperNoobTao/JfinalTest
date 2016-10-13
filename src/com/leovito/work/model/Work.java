@@ -7,6 +7,8 @@ import com.jfinal.plugin.activerecord.Model;
  */
 public class Work extends Model<Work>{
 
-    public static final Work work = new Work();
+    public static final Work dao = new Work();
+
+
 
 }
