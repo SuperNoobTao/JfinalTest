@@ -1,9 +1,12 @@
 package com.leovito.work.service;
 
 import com.jfinal.plugin.activerecord.Db;
+import com.leovito.work.model.Project;
 import com.leovito.work.model.User;
 import com.leovito.work.model.Work;
 import com.sun.scenario.effect.Effect;
+
+import java.util.List;
 
 /**
  * Created by vito on 2016/10/11.
@@ -48,7 +51,12 @@ public class UserService {
     }
 
 
+    public List projectlist(){
+        List<Project> projects = Project.dao.find("select * from tb_project where project_state = 1 ");
 
+        System.out.print("得到的数据是"+projects.size()+"条");
+        return projects;
+    }
 
 
 }

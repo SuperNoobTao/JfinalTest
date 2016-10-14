@@ -1,6 +1,7 @@
 package com.leovito.work.controller;
 
 import com.jfinal.core.Controller;
+import com.jfinal.plugin.activerecord.Page;
 import com.leovito.work.model.Staff;
 import com.leovito.work.model.User;
 import com.leovito.work.service.StaffService;
@@ -19,28 +20,18 @@ public class StaffController extends Controller{
      */
     public void index(){
         String name  = getPara("name");
-        int page = Integer.parseInt(getPara("page"));
-
-
-        int total=staffService.listcount(name);
-        if(page==0){
-            page=1;
+        String strpage =getPara("page");
+        int page ;
+        if (strpage==null) {
+            page = 1;
+        }else {
+            page  = Integer.valueOf(strpage);
         }
-        int totalpage=(int)Math.ceil(total*1.0f/10);
-        if(totalpage==0){
-            totalpage=1;
-        }
-
-        if(page<0){
-            page=1;
-        }
-        if(page>totalpage){
-            page=totalpage;
-        }
-        List<Staff> staffs = staffService.list(name,page,10);
+        if (name==null) {name = "";}
+        Page<Staff> staffs = staffService.list(name,page,10);
 
         setAttr("staffs",staffs);
-        System.out.print("得到的数据是"+staffs.size()+"条");
+        setAttr("name",name);
         render("showstaff.ftl");
     }
 

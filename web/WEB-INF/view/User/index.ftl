@@ -15,7 +15,7 @@
 
 </div>
 <br>
-<button class="btn ui-green" type="submit">
+<button class="btn ui-green" onclick="location.href='record?staffid='+${staff.staff_id}">
     <a>
         查看历史记录
     </a>

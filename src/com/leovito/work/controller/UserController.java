@@ -52,7 +52,7 @@ public class UserController extends Controller {
             java.sql.Date today = getSqlDate(getToday());
             int staffid = staff.get("staff_id");
 
-            List<Project> projects = projectService.list();
+            List<Project> projects = userService.projectlist();
             List<Record> works = workService.todaylist(today, staffid);
             setAttr("works", works);
             setSessionAttr("staffid", staff.get("staff_id"));
@@ -101,9 +101,15 @@ public class UserController extends Controller {
         }else {
             renderJson("state","20000");
         }
-
-
     }
 
-
+    /**
+     * del work
+     */
+    public void record() {
+        java.sql.Date today = getSqlDate(getToday());
+        String staffid = getPara("staffid");
+        List<Work> works = workService.listby(today,staffid);
+        setAttr("works",works);
+    }
 }

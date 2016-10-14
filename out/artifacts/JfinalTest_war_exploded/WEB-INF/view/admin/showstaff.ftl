@@ -13,7 +13,7 @@
 <div class="line">
     <h1>员工列表</h1>
 
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="/staff" method="post" enctype="multipart/form-data">
         <div class="line">
             员工列表
             <a class="btn file ui-white">
@@ -34,13 +34,10 @@
 </div>
 
 
-    <form method="post" action="showstuff.action">
+    <form method="post" action="/staff">
         <tr>
             <td>
-                账号:<input name="workno" value=""/>
-            </td>
-            <td>
-                姓名:<input name="realname" value="" />
+                姓名:<input name="name" value="${name}" />
             </td>
 
 
@@ -59,7 +56,7 @@
         <th>员工名</th>
         <th>编辑</th>
     </tr>
-<#list staffs as s>
+<#list staffs.list as s>
     <tr>
         <td>
         ${s.staff_id}
@@ -81,9 +78,9 @@
 
 </table>
 <div class="line ui-pagenav">
-    <#if test='${nowpage gt 1}'>
+    <#if staffs.pageNumber gt 1>
         <div class="left">
-            <a onclick="gotopage(${nowpage}-1)">
+            <a onclick="gotopage(${staffs.pageNumber}-1)">
                 <i class="flaticon-left207"></i>
                 <span>上一页</span>
             </a>
@@ -91,9 +88,9 @@
     </#if>
 
 
-    <#if test='${nowpage lt totalpage}'>
+    <#if staffs.pageNumber lt staffs.totalPage>
         <div class="right">
-            <a onclick="gotopage(${nowpage}+1)">
+            <a onclick="gotopage(${staffs.pageNumber}+1)">
                 <i class="flaticon-right218"></i>
 
                 <span>下一页</span>
@@ -109,7 +106,7 @@
 
 
     <div class="wy">
-        <a onclick="gotopage(${totalpage})">
+        <a onclick="gotopage(${staffs.totalPage})">
             <span>尾页</span>
         </a>
     </div>
@@ -117,8 +114,18 @@
 </div>
 <script src="../../../static/js/jquery/jquery-1.7.2.min.js"></script>
 <script src="../../../static/js/common/ui.js"></script>
+<form method="post" action="/staff" id="f" style="display: none">
+    <input name="page" id="p"/>
+    <input name="name" value="${name}"/>
 
+</form>
 <script>
+
+    function gotopage(page){
+        $("#p").val(page);
+        $("#f").submit();
+    }
+
     function query(staffid){
         if(confirm("您确认要查看编号为"+staffid+"的员工吗?" )) {
 

@@ -15,6 +15,7 @@ public class ProjectService {
      */
     public List list(){
         List<Project> projects = Project.dao.find("select * from tb_project");
+
         System.out.print("得到的数据是"+projects.size()+"条");
         return projects;
     }
