@@ -18,27 +18,33 @@ public class StaffController extends Controller{
      * 直接访问user地址进入list.jsp
      */
     public void index(){
-        List<Staff> staffs = staffService.list();
+        String name  = getPara("name");
+        int page = Integer.parseInt(getPara("page"));
+
+
+        int total=staffService.listcount(name);
+        if(page==0){
+            page=1;
+        }
+        int totalpage=(int)Math.ceil(total*1.0f/10);
+        if(totalpage==0){
+            totalpage=1;
+        }
+
+        if(page<0){
+            page=1;
+        }
+        if(page>totalpage){
+            page=totalpage;
+        }
+        List<Staff> staffs = staffService.list(name,page,10);
+
         setAttr("staffs",staffs);
         System.out.print("得到的数据是"+staffs.size()+"条");
         render("showstaff.ftl");
     }
 
-    /**
-     * 提交方法
-     */
-    public  void submit(){
-        Staff staff = getModel(Staff.class,"staff");
-       staffService.submit(staff);
-        redirect("/user");
-    }
-//    /**
-//     * 编辑方法
-//     */
-//    public void edit(){
-//
-//        form();
-//    }
+
     /**
      * 删除方法
      */

@@ -26,11 +26,11 @@ import static com.leovito.work.Util.CommonFunctions.getToday;
 @Before(Tx.class)
 public class UserController extends Controller {
     StaffService staffService = new StaffService();
-    ProjectService projectService  = new ProjectService();
+    ProjectService projectService = new ProjectService();
     WorkService workService = new WorkService();
     UserService userService = new UserService();
 
-    public  void login(){
+    public void login() {
         render("login.ftl");
     }
 
@@ -38,8 +38,7 @@ public class UserController extends Controller {
     /**
      * denglu
      */
-    public void index()
-    {
+    public void index() {
         String account = getPara("account");
         String pwd = getPara("pwd");
         Staff staff = new Staff();
@@ -54,12 +53,12 @@ public class UserController extends Controller {
             int staffid = staff.get("staff_id");
 
             List<Project> projects = projectService.list();
-            List<Record> works = workService.todaylist(today,staffid);
-            setAttr("works",works);
-            setSessionAttr("staffid",staff.get("staff_id"));
-            setAttr("staff",staff);
-            setAttr("today",today);
-            setAttr("projects",projects);
+            List<Record> works = workService.todaylist(today, staffid);
+            setAttr("works", works);
+            setSessionAttr("staffid", staff.get("staff_id"));
+            setAttr("staff", staff);
+            setAttr("today", today);
+            setAttr("projects", projects);
             render("index.ftl");
 
 
@@ -72,27 +71,39 @@ public class UserController extends Controller {
     /**
      * add work
      */
-    public void addwork(){
+    public void addwork() {
         String time = getPara("time");
         String projectid = getPara("projectid");
         java.sql.Date date = getSqlDate(getToday());
         int staffid = getSessionAttr("staffid");
-        System.out.println("staffid="+staffid);
-        Work work = new Work().set("work_staffid",staffid)
-                  .set("work_projectid",projectid)
-                  .set("work_time",time)
-                  .set("work_date",date);
+        System.out.println("staffid=" + staffid);
+        Work work = new Work().set("work_staffid", staffid)
+                .set("work_projectid", projectid)
+                .set("work_time", time)
+                .set("work_date", date);
 
         if (workService.save(work)) {
             renderJson("state", "00000");
         } else {
-            renderJson("state","10000");
+            renderJson("state", "10000");
         }
 
     }
 
+    /**
+     * del work
+     */
+    public void delwork() {
+        String workid = getPara("workid");
+        Work.dao.deleteById(workid);
+        if (Work.dao.findById(workid)==null) {
+            renderJson("state","00000");
+        }else {
+            renderJson("state","20000");
+        }
 
 
+    }
 
 
 }

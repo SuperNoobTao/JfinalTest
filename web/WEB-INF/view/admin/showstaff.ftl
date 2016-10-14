@@ -75,13 +75,44 @@
             <button type="button" onclick="location.href='/work/staff_work?staffid='+${s.staff_id}" class="btn ui-green">查看</button>
         </td>
     </tr>
-
 </#list >
 
 
 
 </table>
 <div class="line ui-pagenav">
+    <#if test='${nowpage gt 1}'>
+        <div class="left">
+            <a onclick="gotopage(${nowpage}-1)">
+                <i class="flaticon-left207"></i>
+                <span>上一页</span>
+            </a>
+        </div>
+    </#if>
+
+
+    <#if test='${nowpage lt totalpage}'>
+        <div class="right">
+            <a onclick="gotopage(${nowpage}+1)">
+                <i class="flaticon-right218"></i>
+
+                <span>下一页</span>
+            </a>
+        </div>
+    </#if>
+
+    <div class="sy">
+        <a onclick="gotopage(1)">
+            <span>首页</span>
+        </a>
+    </div>
+
+
+    <div class="wy">
+        <a onclick="gotopage(${totalpage})">
+            <span>尾页</span>
+        </a>
+    </div>
 
 </div>
 <script src="../../../static/js/jquery/jquery-1.7.2.min.js"></script>

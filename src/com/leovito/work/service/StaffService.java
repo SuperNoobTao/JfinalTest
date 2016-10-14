@@ -1,5 +1,7 @@
 package com.leovito.work.service;
 
+import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Page;
 import com.leovito.work.model.Staff;
 import com.leovito.work.model.User;
 
@@ -13,31 +15,19 @@ public class StaffService {
     /**
      * 直接访问user地址进入list.jsp
      */
-    public List list() {
-        List<Staff> staffs = Staff.dao.find("select * from tb_staff");
-        System.out.print("得到的数据是" + staffs.size() + "条");
+    public Page<Staff> list(String name ,int page,int  pagesize) {
+        Page<Staff> staffs = Staff.dao.paginate(page,pagesize,"select *","select * from tb_staff");
         return staffs;
     }
 
-//    /**
-//     * 访问user/form进入from.jsp页面
-//     */
-//    public void form(){
-//        Integer id = getParaToInt(0);
-//        if(id!=null&&id>0){
-//            setAttr("user",Staff.dao.findById(id));
-//        }
-//        render("form.jsp");
-//
-//    }
 
     /**
      * 提交方法
      */
-    public void submit(Staff staff) {
-
-        staff.save();
-
+    public int listcount(String staffname) {
+        String sql = "select count(*) from tb_staff where staff_name like '%" + staffname + "%'";
+        int total = Db.queryInt(sql);
+        return total;
     }
 //    /**
 //     * 编辑方法
