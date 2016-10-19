@@ -38,23 +38,7 @@ public class StaffController extends Controller {
         render("showstaff.ftl");
     }
 
-    /**
-     * 删除方法
-     */
-    public void del() {
-        staffService.del(getPara(0));
-        redirect("/user");
-    }
 
-
-    /**
-     * 更新方法
-     */
-    public void update() {
-        Staff staff = getModel(Staff.class, "staff");
-        staff.update();
-        redirect("/user");
-    }
 
 
 }

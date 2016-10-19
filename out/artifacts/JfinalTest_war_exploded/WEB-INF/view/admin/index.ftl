@@ -85,19 +85,6 @@
    </ul>
   </li>
 
-  <li>
-   <a>
-    <span class="icon"><i class="flaticon-star8"></i></span>
-    <span class="title">管理员管理</span>
-          <span class="arrow">
-          <i class="flaticon-previous2"></i>
-          <i class="flaticon-expand38"></i>
-        </span>
-   </a>
-   <ul class="submenu">
-    <li data-href="#"><a>管理员管理</a></li>
-   </ul>
-  </li>
 
 
  </ul>

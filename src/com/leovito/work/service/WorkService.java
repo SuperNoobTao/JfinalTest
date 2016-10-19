@@ -23,24 +23,52 @@ public class WorkService {
     }
 
     public List listby(String date,String staffid) {
-        List<Record> works = Db.find("select *,s.staff_name,p.project_name from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_date='" + date + "' and work_staffid='" + staffid + "'");
+        List<Record> works = Db.find(
+                "select *,s.staff_name,p.project_name " +
+                        "from tb_work w,tb_staff s,tb_project p " +
+                        "where w.work_staffid=s.staff_id " +
+                        "and w.work_projectid=p.project_id " +
+                        "and work_date='" + date + "' " +
+                        "and work_staffid='" + staffid + "'");
+
         System.out.print("得到的数据是" + works.size() + "条");
         return works;
     }
 
 
     public Page<Record> list(String name ,String date,int page,int  pagesize) {
-        Page<Record> works = Db.paginate(page,pagesize,"select *,s.staff_name,p.project_name","from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_date='" + date + "' and s.staff_name like '%"+name+"%' ");
+        Page<Record> works =
+                Db.paginate(
+                        page,
+                        pagesize,
+                        "select *,s.staff_name,p.project_name",
+                        "from tb_work w,tb_staff s,tb_project p " +
+                                "where w.work_staffid=s.staff_id " +
+                                "and w.work_projectid=p.project_id " +
+                                "and  work_date='" + date + "' " +
+                                "and s.staff_name like '%"+name+"%' ");
         return works;
     }
 
     public List listbystaff(String staffid) {
-        List<Record> works = Db.find("select *,s.staff_name,p.project_name from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_staffid='" + staffid + "'");
+        List<Record> works = Db.find(
+                "select *,s.staff_name,p.project_name " +
+                        "from tb_work w,tb_staff s,tb_project p " +
+                        "where w.work_staffid=s.staff_id " +
+                        "and w.work_projectid=p.project_id " +
+                        "and  work_staffid='" + staffid + "'");
+
         System.out.print("得到的数据是" + works.size() + "条");
         return works;
     }
     public List todaylist(java.sql.Date date,int staffid) {
-        List<Record> works = Db.find("select *,s.staff_name,p.project_name from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_date='" + date + "' and s.staff_id='" + staffid + "' ");
+        List<Record> works = Db.find(
+                "select *,s.staff_name,p.project_name " +
+                        "from tb_work w,tb_staff s,tb_project p " +
+                        "where w.work_staffid=s.staff_id " +
+                        "and w.work_projectid=p.project_id " +
+                        "and  work_date='" + date + "' " +
+                        "and s.staff_id='" + staffid + "' ");
 
         System.out.print("得到的数据是" + works.size() + "条");
         return works;

@@ -26,7 +26,6 @@ import static com.leovito.work.Util.CommonFunctions.getToday;
 @Before(Tx.class)
 public class UserController extends Controller {
     StaffService staffService = new StaffService();
-    ProjectService projectService = new ProjectService();
     WorkService workService = new WorkService();
     UserService userService = new UserService();
 
@@ -43,15 +42,10 @@ public class UserController extends Controller {
         String pwd = getPara("pwd");
         Staff staff = new Staff();
         staff = null;
-
         staff = staffService.findUser(account, pwd);
-
         if (staff != null) {
-
-
             java.sql.Date today = getSqlDate(getToday());
             int staffid = staff.get("staff_id");
-
             List<Project> projects = userService.projectlist();
             List<Record> works = workService.todaylist(today, staffid);
             setAttr("works", works);
@@ -60,8 +54,6 @@ public class UserController extends Controller {
             setAttr("today", today);
             setAttr("projects", projects);
             render("index.ftl");
-
-
         } else {
             render("login.ftl");
         }
@@ -81,7 +73,6 @@ public class UserController extends Controller {
                 .set("work_projectid", projectid)
                 .set("work_time", time)
                 .set("work_date", date);
-
         if (workService.save(work)) {
             renderJson("state", "00000");
         } else {

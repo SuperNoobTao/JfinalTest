@@ -33,9 +33,7 @@ public class ProjectController extends Controller {
         if (name == null) {
             name = "";
         }
-
         Page<Project> projects = projectService.list(name, page, 10);
-
         setAttr("projects", projects);
         setAttr("name", name);
         render("showproject.ftl");
@@ -66,7 +64,9 @@ public class ProjectController extends Controller {
         String name = getPara("name");
         String projectid = getPara("projectid");
         String state = getPara("state");
-        Boolean msg = new Project().findById(projectid).set("project_name", name).set("project_state", state).update();
+        Boolean msg = new Project().findById(projectid).
+                set("project_name", name).
+                set("project_state", state).update();
         if (msg) {
             renderJson("state", StringUtil.SUCCESS);
         } else

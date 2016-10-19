@@ -16,7 +16,12 @@ public class StaffService {
      * 直接访问user地址进入list.jsp
      */
     public Page<Staff> list(String name ,int page,int  pagesize) {
-        Page<Staff> staffs = Staff.dao.paginate(page,pagesize,"select *","from tb_staff where staff_name like '%"+name+"%'");
+        Page<Staff> staffs =
+                Staff.dao.paginate(
+                        page,
+                        pagesize,
+                        "select *",
+                        "from tb_staff where staff_name like '%"+name+"%'");
         return staffs;
     }
 

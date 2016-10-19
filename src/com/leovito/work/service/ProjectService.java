@@ -13,15 +13,22 @@ import java.util.List;
 public class ProjectService {
 
     /**
-     * 直接访问user地址进入list.jsp
+     *
      */
     public Page<Project> list(String name,int page,int  pagesize){
-        Page<Project> projects = Project.dao.paginate(page,pagesize,"select *","from tb_project where project_name like '%"+name+"%'");
+        Page<Project> projects =
+                Project.dao.paginate(
+                        page,
+                        pagesize,
+                        "select *",
+                        "from tb_project where project_name like '%"+name+"%'");
         return projects;
     }
 
     public String add(String name,int state){
-       Boolean msg = new Project().set("project_name",name).set("project_state",state).save();
+       Boolean msg = new Project().
+               set("project_name",name).
+               set("project_state",state).save();
         if (msg) {
             return StringUtil.SUCCESS;
         }

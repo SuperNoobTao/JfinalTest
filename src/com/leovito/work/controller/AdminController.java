@@ -21,11 +21,7 @@ public class AdminController extends Controller {
     {
         String account = getPara("account");
         String pwd = getPara("pwd");
-        User user = new User();
-        user = null;
-
-        user = userService.findUser(account, pwd);
-
+        User user = userService.findUser(account, pwd);
         if (user != null) {
             render("index.ftl");
         } else {
