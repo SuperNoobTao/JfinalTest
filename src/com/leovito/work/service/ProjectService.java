@@ -1,5 +1,7 @@
 package com.leovito.work.service;
 
+import com.jfinal.plugin.activerecord.Page;
+import com.leovito.work.Util.StringUtil;
 import com.leovito.work.model.Project;
 import com.leovito.work.model.Staff;
 
@@ -13,11 +15,17 @@ public class ProjectService {
     /**
      * 直接访问user地址进入list.jsp
      */
-    public List list(){
-        List<Project> projects = Project.dao.find("select * from tb_project");
-
-        System.out.print("得到的数据是"+projects.size()+"条");
+    public Page<Project> list(String name,int page,int  pagesize){
+        Page<Project> projects = Project.dao.paginate(page,pagesize,"select *","from tb_project where project_name like '%"+name+"%'");
         return projects;
+    }
+
+    public String add(String name,int state){
+       Boolean msg = new Project().set("project_name",name).set("project_state",state).save();
+        if (msg) {
+            return StringUtil.SUCCESS;
+        }
+        return StringUtil.DB_WRITTEN_ERROR;
     }
 
 

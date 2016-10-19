@@ -14,6 +14,9 @@ public class AdminController extends Controller {
 
     UserService userService = new UserService();
 
+    /**
+     * （管理员）首页
+     */
     public void index()
     {
         String account = getPara("account");

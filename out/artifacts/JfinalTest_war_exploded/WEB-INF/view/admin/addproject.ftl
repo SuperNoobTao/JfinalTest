@@ -44,13 +44,13 @@
 
 
     function update(){
-        if(confirm("您确认要新增活动吗?修改为" +
+        if(confirm("您确认要新增活动吗?新增为" +
                         "\r\n项目名:"+$("#name").val()
                 )) {
 
             $.ajax({
                 type: "post",
-                url: "addactivityapi.action",
+                url: "add",
                 dataType: "json",
                 timeout: 200000,
                 data: {
@@ -60,11 +60,7 @@
 
                     if (data.state == '00000') {
                         alert("操作成功");
-                        location.reload(false);
-                    }
-                    else if (data.state == '20001') {
-                        alert("登入过期,请重新登入");
-                        location.href = "index.action";
+                        location.href='project';
                     }
                     else if(data.state=='10000'){
                         alert("系统故障");

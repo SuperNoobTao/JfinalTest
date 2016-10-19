@@ -1,6 +1,7 @@
 package com.leovito.work.service;
 
 import com.jfinal.plugin.activerecord.Db;
+import com.jfinal.plugin.activerecord.Page;
 import com.jfinal.plugin.activerecord.Record;
 import com.leovito.work.model.Staff;
 import com.leovito.work.model.Work;
@@ -28,9 +29,8 @@ public class WorkService {
     }
 
 
-    public List list(java.sql.Date date) {
-        List<Record> works = Db.find("select *,s.staff_name,p.project_name from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_date='" + date + "' ");
-        System.out.print("得到的数据是" + works.size() + "条");
+    public Page<Record> list(String name ,String date,int page,int  pagesize) {
+        Page<Record> works = Db.paginate(page,pagesize,"select *,s.staff_name,p.project_name","from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_date='" + date + "' and s.staff_name like '%"+name+"%' ");
         return works;
     }
 

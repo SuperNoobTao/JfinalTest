@@ -29,13 +29,7 @@ public class StaffService {
         int total = Db.queryInt(sql);
         return total;
     }
-//    /**
-//     * 编辑方法
-//     */
-//    public void edit(){
-//
-//        form();
-//    }
+
 
     /**
      * 删除方法
