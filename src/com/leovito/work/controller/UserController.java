@@ -107,9 +107,10 @@ public class UserController extends Controller {
      * del work
      */
     public void record() {
-        java.sql.Date today = getSqlDate(getToday());
+        String date = getPara("date");
+        if (date == null) date = String.valueOf(getSqlDate(getToday()));
         String staffid = getPara("staffid");
-        List<Work> works = workService.listby(today,staffid);
+        List<Work> works = workService.listby(date,staffid);
         setAttr("works",works);
     }
 }

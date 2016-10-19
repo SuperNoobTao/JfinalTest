@@ -22,7 +22,7 @@ public class WorkService {
         return false;
     }
 
-    public List listby(java.sql.Date date,String staffid) {
+    public List listby(String date,String staffid) {
         List<Record> works = Db.find("select *,s.staff_name,p.project_name from tb_work w,tb_staff s,tb_project p where w.work_staffid=s.staff_id and w.work_projectid=p.project_id and  work_date='" + date + "' and work_staffid='" + staffid + "'");
         System.out.print("得到的数据是" + works.size() + "条");
         return works;

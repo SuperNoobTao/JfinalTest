@@ -19,7 +19,7 @@
     <form action="" method="post">
         <tr>
             <td>
-                <input id="startdate" type="date" required/>
+                <input id="date" type="date" required/>
             </td>
             <td colspan="6" style="text-align: left">
                 <input name="page" value="1" type="hidden"/>
